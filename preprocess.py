@@ -45,14 +45,15 @@ def preprocess_urls():
     tk.word_index[tk.oov_token] = max(char_dict.values()) + 1
     
 # Fit tokenizer
+
     tk.fit_on_texts(urls)
     
-    # === SỬA ĐOẠN NÀY ===
-    # Thay vì lưu cả object tk (chứa TensorFlow), ta chỉ lưu từ điển word_index (Python dict thuần)
+    # === QUAN TRỌNG: LƯU TỪ ĐIỂN THUẦN (KHÔNG PHẢI OBJECT KERAS) ===
+    import pickle
     with open('tokenizer.pickle', 'wb') as handle:
+        # Chú ý dòng này: tk.word_index
         pickle.dump(tk.word_index, handle, protocol=pickle.HIGHEST_PROTOCOL) 
     print("--> ĐÃ LƯU THÀNH CÔNG FILE: tokenizer.pickle (Phiên bản nhẹ)")
-    # ====================
 
     # Chuyển text sang sequence
     sequences = tk.texts_to_sequences(urls)
