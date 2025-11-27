@@ -122,3 +122,7 @@ if __name__ == "__main__":
         
         # [cite: 1483] Số epoch là 150
         model_ft = train_model(model, dataloaders, dataset_sizes, criterion, optimizer, num_epochs=150)
+        # Lưu trọng số mô hình vào file .pth
+        save_path = 'resnet18_phishing.pth'
+        torch.save(model_ft.state_dict(), save_path)
+        print(f"--> ĐÃ LƯU THÀNH CÔNG MODEL TẠI: {save_path}")
