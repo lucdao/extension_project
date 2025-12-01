@@ -8,7 +8,7 @@ from sklearn.preprocessing import MinMaxScaler
 import pickle
 
 # Cấu hình đường dẫn
-DATASET_PATH = './dataset_phishing.csv' 
+DATASET_PATH = '.\phishing_site_urls.csv' 
 OUTPUT_DIR = 'Images_Data'
 
 def create_dir_structure():
@@ -27,8 +27,8 @@ def preprocess_urls():
         print(f"LỖI: Không tìm thấy file {DATASET_PATH}. Hãy tải từ Kaggle và đặt vào thư mục dự án.")
         return
 
-    urls = df['url'].values
-    labels = df['status'].values 
+    urls = df['URL'].values
+    labels = df['Label'].values 
     
     # Chuyển về chữ thường
     urls = [s.lower() for s in urls]
