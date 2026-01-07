@@ -1,0 +1,93 @@
+/* popup.css */
+
+/* Cấu hình chung cho Popup */
+body {
+    width: 200px;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.no-transition * {
+    transition: none !important;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#statusText {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* --- LOGIC CHO NÚT CHUYỂN ĐỔI (TOGGLE SWITCH) --- */
+
+/* Lớp chính cho nút chuyển đổi */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px; /* Chiều rộng tổng thể */
+    height: 34px; /* Chiều cao tổng thể */
+}
+
+/* Ẩn input checkbox mặc định */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Thanh trượt (Slider) - Phần nền màu */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Màu nền OFF */
+    transition: .4s;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Tạo vòng tròn (Thumb) */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Kích thước vòng tròn */
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white; /* Màu vòng tròn */
+    transition: .4s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Màu nền khi BẬT (ON) - Màu xanh lá cây */
+input:checked + .slider {
+    background-color: #4CAF50; /* Màu nền ON */
+    border-color: #4CAF50;
+}
+
+/* Vòng tròn dịch chuyển sang phải khi BẬT */
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Thiết lập hình dạng bo tròn (Round) */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

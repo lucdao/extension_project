@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Phishing Scanner",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  
+  "host_permissions": [
+    "https://api.phishingbkfm.id.vn/*",
+    "https://phishingbkfm.id.vn/*",
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "Phishing Scanner" ,
+    "default_popup": "popup.html",
+    "default_icon" : "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
