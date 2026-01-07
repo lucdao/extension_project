@@ -1,0 +1,11 @@
+# Web Framework & Server
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.2torch==2.1.1 --index-url https://download.pytorch.org/whl/cpu
+
+# NLP & Transformer
+transformers==4.35.2
+tokenizers==0.14.1
+
+# Utilities
+python-multipart==0.0.6
