@@ -1,0 +1,21 @@
+/* styles.css */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 380px;
+  margin: 8px;
+  color: #222;
+}
+h2 { margin: 0 0 8px 0; font-size: 16px; }
+#controls { margin-bottom: 8px; }
+button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+#list { list-style: none; padding-left: 0; max-height: 300px; overflow: auto; border-top: 1px solid #eee; margin-top: 8px; }
+#list li { padding: 8px 4px; border-bottom: 1px solid #f4f4f4; font-size: 13px; }
+.url { display:block; color: #0645ad; word-break: break-all; text-decoration: none; }
+.meta { color: #666; font-size: 12px; margin-top: 4px; }
+#summary { margin-bottom: 6px; color: #333; }
+#footer { margin-top: 8px; color: #666; font-size: 12px; }
